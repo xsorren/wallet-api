@@ -47,7 +47,7 @@ app.post('/generate-pass', async (req, res) => {
 
     res.status(200).send({ message: "Pass generated successfully", url: passFilePath });
   } catch (error) {
-    console.error("Error generating pass: ", error);
+    console.error("Error generating pass: ", error, process.env.AWS_REGION);
     res.status(500).send({ error: "Error generating pass" });
   }
 });
